@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+	@apply max-w-[120rem] mx-auto p-[1.5rem] w-full;
+}
+
+@layer components {
+	.header {
+		@apply bg-blue-700 fixed w-full z-50;
+	}
+	.header.active {
+		@apply bg-red-500;
+	}
+	.header .header__wrapper {
+		@apply flex items-center justify-between;
+	}
+	.header .branding img {
+		@apply w-[2rem] h-[2rem] scale-150;
+	}
+	.header .header__nav {
+		@apply hidden;
+	}
+	.header .toggle__menu {
+		@apply flex flex-col gap-[.3rem];
+	}
+	.header .toggle__menu span {
+		@apply w-[2rem] h-[.2rem] bg-white block rounded-full;
+	}
+
+	/* ---------- BANNER ---------- */
+
+	.banner {
+		@apply bg-city h-[100vh] w-[100vw] bg-cover flex items-center text-center;
+	}
+
+	/* ------ BATCHES ------- */
+	.batches {
+		@apply pt-[20rem];
+	}
+	.batches .batches__tab ul {
+		@apply bg-red-500 flex justify-between py-[3rem];
+	}
+	.batches .batches__tab ul li a {
+		@apply text-white p-[1rem];
+	}
+	.batches .batches__tab ul li.active {
+		@apply bg-green-700;
+	}
+	.batches .batches__content {
+		@apply relative;
+	}
+	.batches .batches__tab__content {
+		@apply flex gap-[5rem] items-center absolute right-[0rem] opacity-0 ease-in duration-[.2s];
+	}
+	.batches .batches__tab__content.active {
+		@apply opacity-[1] right-[5rem] ease-in duration-[.2s];
+	}
+	.batches .batches__tab__content.pink {
+		@apply bg-pink-500;
+	}
+	.batches .batches__tab__content img {
+		@apply max-w-[7rem] max-h-[7rem];
+	}
+	.batches .batches__trainee__desc h1 {
+		@apply text-[1.5rem] font-bold;
+	}
+	.batches .batches__trainee__desc h2 {
+		@apply text-[1.2rem];
+	}
+}
